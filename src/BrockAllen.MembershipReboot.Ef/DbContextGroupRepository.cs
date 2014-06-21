@@ -14,11 +14,13 @@ namespace BrockAllen.MembershipReboot.Ef
         where TGroup : RelationalGroup
     {
         protected DbContext db;
+        bool isContextOwner;
         DbSet<TGroup> items;
         
         public DbContextGroupRepository()
             : this(new Ctx())
         {
+            isContextOwner = true;
         }
         public DbContextGroupRepository(Ctx ctx)
         {
@@ -36,11 +38,17 @@ namespace BrockAllen.MembershipReboot.Ef
 
         public void Dispose()
         {
-            if (db.TryDispose())
+            if (isContextOwner)
             {
-                db = null;
-                items = null;
+                db.TryDispose();
             }
+            db = null;
+            items = null;
+        }
+
+        protected virtual void SaveChanges()
+        {
+            db.SaveChanges();
         }
 
         protected override IQueryable<TGroup> Queryable
@@ -58,14 +66,14 @@ namespace BrockAllen.MembershipReboot.Ef
         {
             CheckDisposed();
             items.Add(item);
-            db.SaveChanges();
+            SaveChanges();
         }
 
         public override void Remove(TGroup item)
         {
             CheckDisposed();
             items.Remove(item);
-            db.SaveChanges();
+            SaveChanges();
         }
 
         public override void Update(TGroup item)
@@ -78,7 +86,7 @@ namespace BrockAllen.MembershipReboot.Ef
                 items.Attach(item);
                 entry.State = EntityState.Modified;
             }
-            db.SaveChanges();
+            SaveChanges();
         }
 
         public override System.Collections.Generic.IEnumerable<TGroup> GetByChildID(Guid childGroupID)

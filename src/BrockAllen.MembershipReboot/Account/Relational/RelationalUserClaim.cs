@@ -7,12 +7,10 @@ using System;
 
 namespace BrockAllen.MembershipReboot.Relational
 {
-    public class RelationalUserClaim : UserClaim
+    public class RelationalUserClaim<TKey> : UserClaim
     {
-        public Guid UserAccountID { get; set; }
+        public virtual TKey Key { get; set; }
+        public virtual TKey ParentKey { get; set; }
     }
-    public class RelationalUserClaimInt : UserClaim
-    {
-        public int UserAccountID { get; set; }
-    }
+    public class RelationalUserClaim : RelationalUserClaim<int> { }
 }

@@ -27,12 +27,20 @@ namespace BrockAllen.MembershipReboot
 
         public TGroup GetByName(string tenant, string name)
         {
-            return Queryable.SingleOrDefault(x => x.Tenant == tenant && x.Name == name);
+            if (String.IsNullOrWhiteSpace(tenant) || 
+                String.IsNullOrWhiteSpace(name))
+            {
+                return null;
+            }
+
+            return Queryable.SingleOrDefault(x =>
+                tenant.Equals(x.Tenant, StringComparison.OrdinalIgnoreCase) && 
+                name.Equals(x.Name, StringComparison.OrdinalIgnoreCase));
         }
 
         public System.Collections.Generic.IEnumerable<TGroup> GetByIDs(Guid[] ids)
         {
-            return Queryable.Where(x => ids.Contains(x.ID));
+            return Queryable.Where(x => ids.Contains(x.ID)).ToArray();
         }
 
         public abstract System.Collections.Generic.IEnumerable<TGroup> GetByChildID(Guid childGroupID);

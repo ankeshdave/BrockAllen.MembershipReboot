@@ -14,6 +14,8 @@ namespace BrockAllen.MembershipReboot.Mvc.App_Start
             settings.MultiTenant = false;
             
             var config = new MembershipRebootConfiguration<CustomUserAccount>(settings);
+            config.AddEventHandler(new DebuggerEventHandler<CustomUserAccount>());
+
             config.RegisterPasswordValidator(new PasswordValidator());
             config.ConfigurePasswordComplexity(5, 3);
 
@@ -34,6 +36,7 @@ namespace BrockAllen.MembershipReboot.Mvc.App_Start
 
             config.AddValidationHandler(new PasswordChanging());
             config.AddEventHandler(new PasswordChanged());
+            config.AddCommandHandler(new CustomValidationMessages());
 
             return config;
         }

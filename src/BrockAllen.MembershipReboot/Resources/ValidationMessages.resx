@@ -183,6 +183,9 @@
   <data name="InvalidUsername" xml:space="preserve">
     <value>Invalid username.</value>
   </data>
+  <data name="LinkedAccountAlreadyInUse" xml:space="preserve">
+    <value>The external account is already associated with another user.</value>
+  </data>
   <data name="LoginFailEmailAlreadyAssociated" xml:space="preserve">
     <value>Can't login with this provider because the email is already associated with another account. Please login with your local account and then associate the provider.</value>
   </data>
@@ -211,10 +214,10 @@
     <value>The parent group is already a child of the child group.</value>
   </data>
   <data name="ParentGroupSameAsChild" xml:space="preserve">
-    <value>The parent and child are the same groups.</value>
+    <value>The parent and child are the same group.</value>
   </data>
   <data name="PasswordComplexityRules" xml:space="preserve">
-    <value>Password must contain at least {0} of the follwing characters: one upper, one lower, one digit and one other.</value>
+    <value>Password must contain at least {0} of the following characters: one upper, one lower, one digit and one other.</value>
   </data>
   <data name="PasswordLength" xml:space="preserve">
     <value>Password must be at least {0} characters long.</value>
@@ -249,10 +252,16 @@
   <data name="UsernameCannotContainAtSign" xml:space="preserve">
     <value>Username cannot contain the '@' character.</value>
   </data>
-  <data name="UsernameOnlyContainLettersAndDigits" xml:space="preserve">
-    <value>Username can only contain letters and digits.</value>
+  <data name="UsernameCanOnlyStartOrEndWithLetterOrDigit" xml:space="preserve">
+    <value>Username can begin or end only with a letter or digit.</value>
+  </data>
+  <data name="UsernameOnlyContainsValidCharacters" xml:space="preserve">
+    <value>Username can only contain letters, digits, spaces, periods, dashes or underscores.</value>
   </data>
   <data name="UsernameRequired" xml:space="preserve">
     <value>Username is required.</value>
+  </data>
+  <data name="UsernameCannotRepeatSpecialCharacters" xml:space="preserve">
+    <value>Username cannot have two spaces, periods, dashes or underscores next to one another.</value>
   </data>
 </root>

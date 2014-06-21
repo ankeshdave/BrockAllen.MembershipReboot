@@ -52,11 +52,11 @@
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -246,7 +246,6 @@
     <Content Include="Areas\UserAccount\Views\LinkedAccount\SignInError.cshtml" />
     <Content Include="Areas\UserAccount\Views\LinkedAccount\Manage.cshtml" />
     <Content Include="Areas\UserAccount\Views\ChangeSecretQuestion\Index.cshtml" />
-    <Content Include="Areas\UserAccount\Views\ChangeSecretQuestion\Success.cshtml" />
     <Content Include="Areas\UserAccount\Views\ChangeSecretQuestion\Add.cshtml" />
     <Content Include="Areas\UserAccount\Views\PasswordReset\ResetWithQuestions.cshtml" />
     <Content Include="Areas\UserAccount\Views\Register\Verify.cshtml" />

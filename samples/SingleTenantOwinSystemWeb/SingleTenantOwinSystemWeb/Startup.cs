@@ -41,6 +41,7 @@ namespace SingleTenantOwinSystemWeb
         private static void ConfigureMembershipReboot(IAppBuilder app)
         {
             System.Data.Entity.Database.SetInitializer(new System.Data.Entity.MigrateDatabaseToLatestVersion<DefaultMembershipRebootDatabase, BrockAllen.MembershipReboot.Ef.Migrations.Configuration>());
+            //System.Data.Entity.Database.SetInitializer(new System.Data.Entity.CreateDatabaseIfNotExists<DefaultMembershipRebootDatabase>());
             var cookieOptions = new CookieAuthenticationOptions
             {
                 AuthenticationType = MembershipRebootOwinConstants.AuthenticationType
@@ -89,7 +90,7 @@ namespace SingleTenantOwinSystemWeb
         private static MembershipRebootConfiguration CreateMembershipRebootConfiguration(IAppBuilder app)
         {
             var config = new MembershipRebootConfiguration();
-            // config.RequireAccountVerification = false;
+            config.RequireAccountVerification = false;
             config.AddEventHandler(new DebuggerEventHandler());
 
             var appInfo = new OwinApplicationInformation(
@@ -97,7 +98,7 @@ namespace SingleTenantOwinSystemWeb
                 "Test",
                 "Test Email Signature",
                 "/UserAccount/Login",
-                "/UserAccount/Register/Confirm/",
+                "/UserAccount/ChangeEmail/Confirm/",
                 "/UserAccount/Register/Cancel/",
                 "/UserAccount/PasswordReset/Confirm/");
 

@@ -5,6 +5,8 @@
 
 
 using BrockAllen.MembershipReboot.Relational;
+using System.Data.Entity;
+
 namespace BrockAllen.MembershipReboot.Ef
 {
     public class DefaultUserAccountRepository
@@ -17,6 +19,11 @@ namespace BrockAllen.MembershipReboot.Ef
 
         public DefaultUserAccountRepository(string name)
             : base(new DefaultMembershipRebootDatabase(name))
+        {
+        }
+
+        public DefaultUserAccountRepository(string name, string schemaName)
+            : base(new DefaultMembershipRebootDatabase(name, schemaName))
         {
         }
 

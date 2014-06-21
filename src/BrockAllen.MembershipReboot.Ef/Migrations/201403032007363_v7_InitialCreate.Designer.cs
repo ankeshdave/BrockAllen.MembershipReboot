@@ -6,14 +6,14 @@ namespace BrockAllen.MembershipReboot.Ef.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.0.1-21010")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.0.2-21211")]
+    public sealed partial class v7_InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(v7_InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201311222357350_InitialCreate"; }
+            get { return "201403032007363_v7_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

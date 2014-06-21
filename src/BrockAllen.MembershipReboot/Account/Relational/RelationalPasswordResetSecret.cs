@@ -7,12 +7,10 @@ using System;
 
 namespace BrockAllen.MembershipReboot.Relational
 {
-    public class RelationalPasswordResetSecret : PasswordResetSecret
+    public class RelationalPasswordResetSecret<TKey> : PasswordResetSecret
     {
-        public Guid UserAccountID { get; set; }
+        public virtual TKey Key { get; set; }
+        public virtual TKey ParentKey { get; set; }
     }
-    public class RelationalPasswordResetSecretInt : PasswordResetSecret
-    {
-        public int UserAccountID { get; set; }
-    }
+    public class RelationalPasswordResetSecret : RelationalPasswordResetSecret<int> { }
 }

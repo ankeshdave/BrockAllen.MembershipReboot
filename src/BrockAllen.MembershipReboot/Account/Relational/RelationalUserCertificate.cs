@@ -7,12 +7,10 @@ using System;
 
 namespace BrockAllen.MembershipReboot.Relational
 {
-    public class RelationalUserCertificate : UserCertificate
+    public class RelationalUserCertificate<TKey> : UserCertificate
     {
-        public Guid UserAccountID { get; set; }
+        public virtual TKey Key { get; set; }
+        public virtual TKey ParentKey { get; set; }
     }
-    public class RelationalUserCertificateInt : UserCertificate
-    {
-        public int UserAccountID { get; set; }
-    }
+    public class RelationalUserCertificate : RelationalUserCertificate<int> { }
 }

@@ -34,11 +34,11 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -49,6 +49,11 @@
   <ItemGroup>
     <Content Include="license.txt" />
     <Content Include="app.config" />
+    <Content Include="Sql\v6_schema.sql" />
+    <Content Include="Sql\v6_sampledata.sql" />
+    <Content Include="Sql\v6_to_v7_migration.sql" />
+    <Content Include="Sql\v7_schema.sql" />
+    <Content Include="Sql\v7_sampledata.sql" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContextGroupRepository.cs" />
@@ -57,17 +62,17 @@
     <Compile Include="DefaultUserAccountRepository.cs" />
     <Compile Include="DefaultGroupRepository.cs" />
     <Compile Include="DefaultMembershipRebootDatabase.cs" />
-    <Compile Include="Migrations\201311222357350_InitialCreate.cs" />
-    <Compile Include="Migrations\201311222357350_InitialCreate.Designer.cs">
-      <DependentUpon>201311222357350_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201403032007363_v7_InitialCreate.cs" />
+    <Compile Include="Migrations\201403032007363_v7_InitialCreate.Designer.cs">
+      <DependentUpon>201403032007363_v7_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201312202126194_v5.cs" />
-    <Compile Include="Migrations\201312202126194_v5.Designer.cs">
-      <DependentUpon>201312202126194_v5.cs</DependentUpon>
+    <Compile Include="Migrations\201403032007511_v7_Indexes.cs" />
+    <Compile Include="Migrations\201403032007511_v7_Indexes.Designer.cs">
+      <DependentUpon>201403032007511_v7_Indexes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201312281555533_v6.cs" />
-    <Compile Include="Migrations\201312281555533_v6.Designer.cs">
-      <DependentUpon>201312281555533_v6.cs</DependentUpon>
+    <Compile Include="Migrations\201403261401393_v7_PhantomIndexes.cs" />
+    <Compile Include="Migrations\201403261401393_v7_PhantomIndexes.Designer.cs">
+      <DependentUpon>201403261401393_v7_PhantomIndexes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,14 +84,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201311222357350_InitialCreate.resx">
-      <DependentUpon>201311222357350_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201403032007363_v7_InitialCreate.resx">
+      <DependentUpon>201403032007363_v7_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312202126194_v5.resx">
-      <DependentUpon>201312202126194_v5.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201403032007511_v7_Indexes.resx">
+      <DependentUpon>201403032007511_v7_Indexes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312281555533_v6.resx">
-      <DependentUpon>201312281555533_v6.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201403261401393_v7_PhantomIndexes.resx">
+      <DependentUpon>201403261401393_v7_PhantomIndexes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
